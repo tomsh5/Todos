@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos MVC</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="onInit()">
+    <h1>Todos</h1>
+    <h2>MVC - Model-View-Controller</h2>
+
+    <section class="todo-filter">
+        <h3>Filter</h3>
+        <select onchange="onSetFilter(this.value)">
+            <option value="all">All Todos you have</option>
+            <option value="active">Active</option>
+            <option value="done">Done</option>
+        </select>
+    </section>
+    <section class="todo-sort">
+        <h3>Sort</h3>
+        <select onchange="onSetSort(this.value)">
+            <option value="txt">Text</option>
+            <option value="created">Created</option>
+            <option value="importance">Importance</option>
+        </select>
+    </section>
+    <ul class="todo-list">
+    </ul>
+    <input type="text" placeholder="Add Someting" /> <span>Importnace Level:</span>
+    <select class="importance" onchange>
+        <option value="1">High</option>
+        <option value="2">Medium</option>
+        <option value="3">Lite</option>
+    </select>
+    <button onclick="onAddTodo()">Add</button>
+    <section class="todo-stat">
+        <h3>
+            Total Todos:
+            <span class="total-count"></span>
+            Active: 
+            <span class="active-count"></span>
+            
+        </h3>
+    </section>
+
+    <script src="js/storage.service.js"></script>
+    <script src="js/todo.service.js"></script>
+    <script src="js/todo-controller.js"></script>
+</body>
+
+</html>
